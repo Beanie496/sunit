@@ -4,10 +4,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define bold		"\033[1m"
-#define red		"\033[31m"
-#define green		"\033[32m"
-#define reset		"\033[m"
+#define bold            "\033[1m"
+#define red             "\033[31m"
+#define green           "\033[32m"
+#define reset           "\033[m"
 
 #define ASSERT(a)\
 do\
