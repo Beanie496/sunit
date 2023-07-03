@@ -26,5 +26,5 @@ help:
 clean:
 	rm -f test
 
-test:
+test: test.c
 	+cc $(CFLAGS) -o $@ test.c
