@@ -5,10 +5,12 @@
 int main()
 {
 	int a = 1;
-	int b = a + 1;
-	ASSERT_LT(a, b);
-	b = a;
-	ASSERT_LT(a, b);
+	int b = a;
+	ASSERT_GEQ(a, b);
+	b--;
+	ASSERT_GEQ(a, b);
+	b = a + 1;
+	ASSERT_GEQ(a, b);
 
 	return 0;
 }
