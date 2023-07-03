@@ -43,4 +43,16 @@ do\
 				"false\n", __LINE__);\
 while (0)
 
+#define ASSERT_GT(a, b)\
+do\
+	if (a > b)\
+		fprintf(stderr, green bold "PASSED: " reset __FILE__ ", %d: \'"\
+				#a "\' expected to be greater than \'" #b\
+				"\'; got true\n", __LINE__);\
+	else\
+		fprintf(stderr, red bold "FAILED: " reset __FILE__ ", %d: \'"\
+				#a "\' expected to be greater than \'" #b\
+				"\'; got false\n", __LINE__);\
+while (0)
+
 #endif
