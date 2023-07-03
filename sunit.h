@@ -4,18 +4,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ASSERT(a, msg)\
+#define ASSERT(a)\
 do {\
 	if (!a) {\
-		fprintf(stderr, "%s\n", msg);\
+		fprintf(stderr, "FAILED: \'" #a "\' expected true; got "\
+                                "false\n");\
 		exit(1);\
 	}\
 } while (0)
 
-#define ASSERT_EQ(a, b, msg)\
+#define ASSERT_EQ(a, b)\
 do {\
 	if (a != b) {\
-		fprintf(stderr, "%s\n", msg);\
+		fprintf(stderr, "FAILED: value of \'" #a "\' expected "\
+				"to match value of \'" #b "\'\n");\
 		exit(1);\
 	}\
 } while (0)
