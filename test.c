@@ -22,6 +22,9 @@ int main()
 	ASSERT_GEQ(gta, a);
 	ASSERT_GEQ(a,   a);
 	ASSERT_GEQ(lta, a);
+	ASSERT_LEQ(lta, a);
+	ASSERT_LEQ(a,   a);
+	ASSERT_LEQ(gta, a);
 
 	return 0;
 }
