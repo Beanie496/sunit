@@ -4,7 +4,7 @@
 
 int main()
 {
-	int a = 0;
+	int a = 1;
 	int b = a;
 	ASSERT(a);
 	ASSERT_EQ(a, b);
