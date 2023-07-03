@@ -5,10 +5,10 @@
 int main()
 {
 	int a = 1;
-	int b = a;
-	ASSERT_EQ(a, b);
-	b++;
-	ASSERT_EQ(a, b);
+	int b = a + 1;
+	ASSERT_NEQ(a, b);
+	b = a;
+	ASSERT_NEQ(a, b);
 
 	return 0;
 }
