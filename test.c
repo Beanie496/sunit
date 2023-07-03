@@ -4,12 +4,10 @@
 
 int main()
 {
-	int a = 10;
-	int b = 11;
-	ASSERT("a != b", a, b);
-
-	b = a;
-	ASSERT("a != b", a, b);
+	int a = 0;
+	int b = 1;
+	ASSERT("a is false", a);
+	ASSERT("b is false", b);
 
 	return 0;
 }
