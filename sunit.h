@@ -55,4 +55,16 @@ do\
 				"\'; got false\n", __LINE__);\
 while (0)
 
+#define ASSERT_LT(a, b)\
+do\
+	if (a < b)\
+		fprintf(stderr, green bold "PASSED: " reset __FILE__ ", %d: \'"\
+				#a "\' expected to be less than \'" #b "\'; "\
+				"got true\n", __LINE__);\
+	else\
+		fprintf(stderr, red bold "FAILED: " reset __FILE__ ", %d: \'"\
+				#a "\' expected to be less than \'" #b "\'; "\
+				"got false\n", __LINE__);\
+while (0)
+
 #endif

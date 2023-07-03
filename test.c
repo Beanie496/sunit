@@ -4,11 +4,11 @@
 
 int main()
 {
-	int a = 2;
-	int b = a - 1;
-	ASSERT_GT(a, b);
+	int a = 1;
+	int b = a + 1;
+	ASSERT_LT(a, b);
 	b = a;
-	ASSERT_GT(a, b);
+	ASSERT_LT(a, b);
 
 	return 0;
 }
