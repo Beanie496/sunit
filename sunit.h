@@ -7,8 +7,8 @@
 #define ASSERT(a)\
 do {\
 	if (!a) {\
-		fprintf(stderr, "FAILED: \'" #a "\' expected true; got "\
-                                "false\n");\
+		fprintf(stderr, "FAILED: " __FILE__ ", %d: \'" #a "\' "\
+				"expected true; got false\n", __LINE__);\
 		exit(1);\
 	}\
 } while (0)
