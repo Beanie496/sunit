@@ -13,13 +13,4 @@ do {\
 	}\
 } while (0)
 
-#define ASSERT_EQ(a, b)\
-do {\
-	if (a != b) {\
-		fprintf(stderr, "FAILED: value of \'" #a "\' expected to "\
-				"match value of \'" #b "\'\n");\
-		exit(1);\
-	}\
-} while (0)
-
 #endif
