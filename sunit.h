@@ -21,4 +21,18 @@ do {\
 	}\
 } while (0)
 
+#define ASSERT_EQ(a, b)\
+do {\
+	if (a == b) {\
+		fprintf(stderr, green bold "PASSED: " reset __FILE__ ", %d: \'"\
+				#a "\' expected to equal \'" #b "\'; got "\
+				"true\n", __LINE__);\
+	} else {\
+		fprintf(stderr, red bold "FAILED: " reset __FILE__ ", %d: \'"\
+				#a "\' expected to equal \'" #b "\'; got "\
+				"false\n", __LINE__);\
+		exit(1);\
+	}\
+} while (0)
+
 #endif

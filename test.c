@@ -5,9 +5,10 @@
 int main()
 {
 	int a = 1;
-	ASSERT(a);
-	a = 0;
-	ASSERT(a);
+	int b = a;
+	ASSERT_EQ(a, b);
+	b++;
+	ASSERT_EQ(a, b);
 
 	return 0;
 }
