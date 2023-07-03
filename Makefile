@@ -26,5 +26,5 @@ help:
 clean:
 	rm -f test
 
-test: test.c sunit.h
-	+cc $(CFLAGS) -o $@ test.c
+test: test.c sunit.c sunit.h
+	+cc $(CFLAGS) -o $@ test.c sunit.c
