@@ -6,8 +6,8 @@ int main()
 {
 	int a = 0;
 	int b = 1;
-	ASSERT("a is false", a);
-	ASSERT("b is false", b);
+	ASSERT(a, "a is false");
+	ASSERT(b, "b is false");
 
 	return 0;
 }
