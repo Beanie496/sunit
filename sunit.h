@@ -6,7 +6,10 @@
 
 #define ASSERT(a)\
 do {\
-	if (!a) {\
+	if (a) {\
+		fprintf(stderr, "PASSED: " __FILE__ ", %d: \'" #a "\' "\
+				"expected true; got true\n", __LINE__);\
+	} else {\
 		fprintf(stderr, "FAILED: " __FILE__ ", %d: \'" #a "\' "\
 				"expected true; got false\n", __LINE__);\
 		exit(1);\
