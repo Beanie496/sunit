@@ -4,10 +4,12 @@
 
 int main()
 {
-	int a = 0;
-	int b = 1;
-	ASSERT(a, "a is false");
-	ASSERT(b, "b is false");
+	int a = 10;
+	int b = a;
+	ASSERT_EQ(a, b, "a != b");
+
+	b++;
+	ASSERT_EQ(a, b, "a != b");
 
 	return 0;
 }
