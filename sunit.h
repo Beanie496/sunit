@@ -8,13 +8,13 @@
 #define RED             "\033[31m"
 #define GREEN           "\033[32m"
 #define RESET           "\033[m"
+
 #define MSG_PASS(a, msg) \
 	fprintf(stderr, GREEN BOLD "PASSED: " RESET __FILE__ ", %d: \'" #a\
 			"\' " msg "\n", __LINE__)
 #define MSG_FAIL(a, msg) \
 	fprintf(stderr, RED BOLD "FAILED: " RESET __FILE__ ", %d: \'" #a\
 			"\' " msg "\n", __LINE__)
-
 
 #define ASSERT(a)\
 do\
