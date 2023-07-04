@@ -2,7 +2,6 @@
 #define SUNIT_INCLUDED
 
 #include <stdio.h>
-#include <stdlib.h>
 
 #define BOLD            "\033[1m"
 #define RED             "\033[31m"
