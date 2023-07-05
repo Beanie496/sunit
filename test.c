@@ -2,29 +2,35 @@
 
 #include "sunit.h"
 
+int testsRun = 0;
+int testsPassed = 0;
+
+int test1(void);
+int test2(void);
+void test(void);
+
 int main()
 {
-	int a = 1;
-	int gta = a + 1;
-	int lta = a - 1;
-	int na = !a;
-
-	ASSERT(1);
-	ASSERT(0);
-	ASSERT_EQ(a, a);
-	ASSERT_EQ(a, na);
-	ASSERT_NEQ(a, na);
-	ASSERT_NEQ(a, a);
-	ASSERT_GT(gta, a);
-	ASSERT_GT(lta, a);
-	ASSERT_LT(lta, a);
-	ASSERT_LT(gta, a);
-	ASSERT_GEQ(gta, a);
-	ASSERT_GEQ(a,   a);
-	ASSERT_GEQ(lta, a);
-	ASSERT_LEQ(lta, a);
-	ASSERT_LEQ(a,   a);
-	ASSERT_LEQ(gta, a);
+	test();
 
 	return 0;
+}
+
+int test1()
+{
+	ASSERT(10);
+}
+
+int test2()
+{
+	ASSERT(0);
+}
+
+void test()
+{
+	RUN_TEST(test1);
+	RUN_TEST(test2);
+
+	fprintf(stderr, "Passed: %d | Failed: %d | Total: %d\n", testsPassed,
+			testsRun - testsPassed, testsRun);
 }

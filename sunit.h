@@ -16,12 +16,14 @@
 			"\' " msg "\n", __LINE__)
 
 #define ASSERT(a)\
-do\
+do {\
 	if (a)\
 		MSG_PASS(a, "expected true");\
 	else\
 		MSG_FAIL(a, "expected true");\
-while (0)
+	/* syntactic ugliness but it's necessary not to use stack space */\
+	return (a != 0);\
+} while (0)
 
 #define ASSERT_EQ(a, b)\
 do\
@@ -70,5 +72,14 @@ do\
 	else\
 		MSG_FAIL(a, "expected to be less than or equal to \'" #b "\'");\
 while (0)
+
+#define RUN_TEST(func)\
+do {\
+	testsRun++;\
+	testsPassed += func();\
+} while (0)
+
+extern int testsRun;
+extern int testsPassed;
 
 #endif
