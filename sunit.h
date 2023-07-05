@@ -26,52 +26,58 @@ do {\
 } while (0)
 
 #define ASSERT_EQ(a, b)\
-do\
+do {\
 	if (a == b)\
 		MSG_PASS(a, "expected to equal \'" #b "\'");\
 	else\
 		MSG_FAIL(a, "expected to equal \'" #b "\'");\
-while (0)
+	return (a == b);\
+} while (0)
 
 #define ASSERT_NEQ(a, b)\
-do\
+do {\
 	if (a != b)\
 		MSG_PASS(a, "expected not to equal \'" #b "\'");\
 	else\
 		MSG_FAIL(a, "expected not to equal \'" #b "\'");\
-while (0)
+	return (a != b);\
+} while (0)
 
 #define ASSERT_GT(a, b)\
-do\
+do {\
 	if (a > b)\
 		MSG_PASS(a, "expected to be greater than \'" #b "\'");\
 	else\
 		MSG_FAIL(a, "expected to be greater than \'" #b "\'");\
-while (0)
+	return (a > b);\
+} while (0)
 
 #define ASSERT_LT(a, b)\
-do\
+do {\
 	if (a < b)\
 		MSG_PASS(a, "expected to be less than \'" #b "\'");\
 	else\
 		MSG_FAIL(a, "expected to be less than \'" #b "\'");\
-while (0)
+	return (a < b);\
+} while (0)
 
 #define ASSERT_GEQ(a, b)\
-do\
+do {\
 	if (a >= b)\
 		MSG_PASS(a, "expected to be greater than or equal to \'" #b "\'");\
 	else\
 		MSG_FAIL(a, "expected to be greater than or equal to \'" #b "\'");\
-while (0)
+	return (a >= b);\
+} while (0)
 
 #define ASSERT_LEQ(a, b)\
-do\
+do {\
 	if (a <= b)\
 		MSG_PASS(a, "expected to be less than or equal to \'" #b "\'");\
 	else\
 		MSG_FAIL(a, "expected to be less than or equal to \'" #b "\'");\
-while (0)
+	return (a <= b);\
+} while (0)
 
 #define RUN_TEST(func)\
 do {\
