@@ -1,6 +1,4 @@
-BINDIR = /usr/local/bin
 CC = cc
-STRIP = strip
 CFLAGS = -pedantic -Wall -O2
 
 
@@ -27,4 +25,4 @@ clean:
 	rm -f test
 
 test: test.c sunit.h
-	+cc $(CFLAGS) -o $@ test.c
+	+$(CC) $(CFLAGS) -o $@ test.c
