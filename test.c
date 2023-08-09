@@ -18,33 +18,32 @@ int main()
 	return 0;
 }
 
-int test1()
+int passing_test()
 {
-	ASSERT(10);
+	ASSERT(1);
+	ASSERT_EQ(1, 1);
+	ASSERT_NEQ(1, 2);
+	ASSERT_GT(2, 1);
+	ASSERT_LT(1, 2);
+	ASSERT_GEQ(2, 1);
+	ASSERT_GEQ(1, 1);
+	ASSERT_LEQ(1, 2);
+	ASSERT_LEQ(1, 1);
+	ASSERT_STREQ("breadsticks", "breadsticks");
+	ASSERT_STRNEQ("apples", "cheese");
+	return 1;
 }
 
-int test2()
+int failing_test()
 {
 	ASSERT(0);
-}
-
-int test3()
-{
-	ASSERT_EQ(0, 3);
-}
-
-int test4()
-{
-	ASSERT_GEQ(10, 5);
+	return 1;
 }
 
 void test()
 {
-	RUN_TEST(test1);
-	RUN_TEST(test2);
-	RUN_TEST(test3);
-	RUN_TEST(test4);
+	RUN_TEST(passing_test);
+	RUN_TEST(failing_test);
 
-	fprintf(stderr, "Passed: %d | Failed: %d | Total: %d\n", testsPassed,
-			testsRun - testsPassed, testsRun);
+	TEST_SUMMARY();
 }
