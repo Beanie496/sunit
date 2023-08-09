@@ -14,23 +14,23 @@ To run a test, use `RUN_TEST()`, with the name of the test in the parenthesis.
 To see a summary of the tests so far, use `TEST_SUMMARY()`.
 
 Each of the following asserts test a condition.
-Each prints: "<PASSED/FAILED>: <FILE>, <LINE>: expected <a> <condition> <b>".
+Each prints: `<PASSED/FAILED>: <FILE>, <LINE>: expected <a> <condition> <b>`.
 The exception is `ASSERT(a)`, which prints:
- "<PASSED/FAILED>: <FILE>, <LINE>: expected <a> == true (!= 0)".
+`<PASSED/FAILED>: <FILE>, <LINE>: expected <a> == true (!= 0)`.
 
 Asserts:
-- ASSERT(a): tests `a` == true, which in C-style is `a` != 0
-- ASSERT_EQ(a, b): tests `a` == `b`
-- ASSERT_NEQ(a, b): tests `a` != `b`
-- ASSERT_GT(a, b): tests `a` > `b`
-- ASSERT_LT(a, b): tests `a` < `b`
-- ASSERT_GEQ(a, b): tests `a` >= `b`
-- ASSERT_LEQ(a, b): tests `a` <= `b`
-- ASSERT_STREQ(a, b): tests `strcmp(a, b)` == 0
-- ASSERT_STRNEQ(a, b): tests `strcmp(a, b)` != 0
+- `ASSERT(a)`: tests `a == true`, which in C-style is `a != 0`
+- `ASSERT_EQ(a, b)`: tests `a == b`
+- `ASSERT_NEQ(a, b)`: tests `a != b`
+- `ASSERT_GT(a, b)`: tests `a > b`
+- `ASSERT_LT(a, b)`: tests `a < b`
+- `ASSERT_GEQ(a, b)`: tests `a >= b`
+- `ASSERT_LEQ(a, b)`: tests `a <= b`
+- `ASSERT_STREQ(a, b)`: tests `strcmp(a, b) == 0`
+- `ASSERT_STRNEQ(a, b)`: tests `strcmp(a, b) != 0`
 Other macros:
-- RUN_TEST(test): runs a test and stores the result (1 for passed; 0 for failed)
-- TEST_SUMMARY(): prints a summary of the tests so far
+- `RUN_TEST(test)`: runs a test and stores the result (1 for passed; 0 for failed)
+- `TEST_SUMMARY()`: prints a summary of the tests so far
 
 Example:
 ```c
