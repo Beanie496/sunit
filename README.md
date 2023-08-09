@@ -28,6 +28,7 @@ Asserts:
 - `ASSERT_LEQ(a, b)`: tests `a <= b`
 - `ASSERT_STREQ(a, b)`: tests `strcmp(a, b) == 0`
 - `ASSERT_STRNEQ(a, b)`: tests `strcmp(a, b) != 0`
+
 Other macros:
 - `RUN_TEST(test)`: runs a test and stores the result (1 for passed; 0 for failed)
 - `TEST_SUMMARY()`: prints a summary of the tests so far
